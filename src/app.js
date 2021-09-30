@@ -26,7 +26,8 @@ function getDate(timestamp){
 function showTemperature(response){
 document.querySelector("#city").innerHTML =response.data.name;
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
-document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+celsiusTemperature = response.data.main.temp;
+document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#date").innerHTML = getDate(response.data.dt*1000);
@@ -46,9 +47,23 @@ function handleSubmit(event){
     search(cityInput.value);
 }
 
+function displayCelsiusTemperature(event){
+ event.preventDefault();
+let temperature = document.querySelector("#temperature");
+temperature.innerHTML = Math.round(celsiusTemperature); 
+}
 
+function displayFahrenheitTemperature(event){
+ event.preventDefault();
+ let temperature = document.querySelector("#temperature");
+ let Fahrenheit = (celsiusTemperature *9) /5 + 32;
+ temperature.innerHTML =Math.round(Fahrenheit);
+}
 
-let form = document.querySelector("#search-bar");
-form.addEventListener("submit", handleSubmit);
+let celsiusTemperature =null ;
+document.querySelector("#search-bar").addEventListener("submit", handleSubmit);
+document.querySelector("#fahrenheit").addEventListener("click", displayFahrenheitTemperature);
+document.querySelector("#celsius").addEventListener("click", displayCelsiusTemperature);
+
 
 search("tehran");
