@@ -83,21 +83,12 @@ li::first-letter {
   line-height: 1;
   font-weight: 400;
 }
-.units {
+.unit {
   position: relative;
   font-size: 16px;
   top: -34px;
 }
-.active {
-  text-decoration: none;
-  color: black;
-  cursor: default;
-}
-.active:hover {
-  text-decoration: none;
-  color: black;
-  cursor: default;
-}
+
 a {
   text-decoration: none;
 }

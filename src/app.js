@@ -43,8 +43,6 @@ console.log(response.data.daily);
 forecastHTML = `<div class="row">`;
 forecastDaily.forEach(function(forecast, index){
     if(index < 6){
-
-    
     forecastHTML = forecastHTML + `               
                         <div class="col-2">
                              <div class="forecastDay">
@@ -62,6 +60,7 @@ forecastDaily.forEach(function(forecast, index){
 
     forecast.innerHTML= forecastHTML + `</div>`;
 }
+
 function getForecast(coordinates){
     let apiKey =  `19351561bdce0a99202ae9e49984792f`
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -93,31 +92,6 @@ let cityInput = document.querySelector("#city-input");
 search(cityInput.value);
 }
 
-function displayCelsiusTemperature(event){ 
-event.preventDefault();
-let temperature = document.querySelector("#temperature");
-temperature.innerHTML = Math.round(celsiusTemperature); 
-celsiusLink.classList.add("active");
-fahrenheitLink.classList.remove("active");
-}
-
-function displayFahrenheitTemperature(event){
- event.preventDefault();
- let temperature = document.querySelector("#temperature");
- let FahrenheitTemperature = (celsiusTemperature *9) /5 + 32;
- temperature.innerHTML =Math.round(FahrenheitTemperature);
- celsiusLink.classList.remove("active");
- fahrenheitLink.classList.add("active");
-}
-
-let celsiusTemperature =null ;
 document.querySelector("#search-bar").addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink= document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
 
 search("tehran");
