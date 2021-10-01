@@ -14,96 +14,73 @@
 </head>
 <body>
     <div class="container">
-    <div class="weather-app-wrapper">
+     <div class="weather-app-wrapper">
         <div class="weather-app">
-       <form id="search-bar" class="mb-3">
+         <form id="search-bar" class="mb-3">
            <div class="row">
-               <div class="col-8">
+                <div class="col-8">
                    <input type="search"
                    id="city-input"
                    placeholder="Type a city..." 
                    class="form-control"  
                    autocomplete="off">
-               </div>
-                <div class="col-2">
+                 </div>
+                 <div class="col-2">
                      <input type="submit" 
                      value="Search" 
                      id="search-button"
-                     class="btn btn-primary"
-                     
-                     >
+                     class="btn btn-primary">
                  </div>
-               <div class="col-1">
-                <i id="emoji" class="fas fa-search-location"></i>
-               </div>
-               </div>
+                 <div class="col-1">
+                 <i id="emoji" class="fas fa-search-location"></i>
+                </div>
+            </div>
            
-       </form>
-       <div class="weatherInfo">
-                  <h1 id="city">
-                       
-                   </h1>
-                   <ul></ul>    
-                           <li>
-                              Last updated: <span id="date"></span>
-                           </li>
-                           <li id="description">
-                              
-                           </li>
-                        </ul>
-       </div>
-                   </ul>
-                   <div class="row">
+         </form>
+             <div class="weatherInfo">
+                <h1 id="city">       
+                 </h1>
+                     <ul>    
+                        <li>
+                            Last updated: <span id="date"></span>
+                        </li>
+                        <li id="description"> 
+                        </li>
+                     </ul>
+             </div>
+
+                    <div class="row">
                        <div class="col-6">
                            <div class="clearfix weatherTemperature">
                         
                             <img 
                             id="icon"
                             src=""
-                             alt="" 
-                             class="float-left" />
+                            alt="" 
+                            class="float-left" />
                             <span class="floatLeft"><strong id="temperature"></strong></span><span class="units"><a href="#" id="celsius" class="active">°C</a>|<a href="#" id="fahrenheit">°F</a></span>
-                                
-                    
-                    
-                </div>
-                   </div>
-                   
-                   <div class="col-6">
-                       <ul>
-                           <li>
-                               Humidity:
-                               <span id="humidity"></span>%
-                           </li>
-                           <li>
-                               Wind:
-                               <span id="wind"></span> km/h
-                           </li>
-                       </ul>
-                   </div>
-                </div>
-                <div class="weatherForecast">
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="forecastDay">
-                                Tue
+                            
                             </div>
-                            <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42">
-                        <div class="forecastTemperatures">
-                            <span class="forecastTemperatureMax">21°</span>
-                            <span class="forecastTemperatureMin">15°</span>
-                        </div>                      
-                    </div>
-                    </div>
+                        </div>
+                   
+                        <div class="col-6">
+                            <ul>
+                                 <li>
+                                    Humidity:
+                                    <span id="humidity"></span>%
+                                 </li>
+                                 <li>
+                                    Wind:
+                                    <span id="wind"></span> km/h
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                 <div class="weatherForecast" id="forecast">
+                   
                 </div>
-</div>
-
-
-                       
-                           
-       
-   
-        </div>
+        </div> 
+    </div>
         <footer id="footer">
             This project was coded by Mehrnaz Zand and is 
             <a href="https://github.com/Mehrnaz-zand/Vanilla-weather-app" target="_blank">
