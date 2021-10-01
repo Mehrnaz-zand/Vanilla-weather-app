@@ -22,7 +22,8 @@ function getDate(timestamp){
     return `${day} ${hours}:${minutes}`
 
 }
-function dispalyForecast() {
+function dispalyForecast(response) {
+console.log(response.data);
 let forecast= document.querySelector(".weatherForecast");
 forecastHTML = ` <div class="row">`;
 let days = ["sat", "sun","mon","tue"];
@@ -42,7 +43,11 @@ days.forEach(function(day){
     
 });
 forecast.innerHTML= forecastHTML + `</div>`;
-
+}
+function getForecast(coordinates){
+    let apiKey =  `19351561bdce0a99202ae9e49984792f`
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(dispalyForecast);
 }
 
 function showTemperature(response){
@@ -55,6 +60,7 @@ document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed)
 document.querySelector("#date").innerHTML = getDate(response.data.dt*1000);
 document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description);
+getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -95,5 +101,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink= document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-dispalyForecast();
+
 search("tehran");
