@@ -3,25 +3,23 @@ body {
 }
 .weather-app-wrapper {
   max-width: 600px;
-  margin: 30px auto;
+  margin: 40px auto;
 }
 .weather-app {
   margin: 30px auto;
-  padding: 20px;
+  margin-bottom: -35px;
   border: 1px solid black;
-  border-radius: 50px;
+  border-radius: 5px;
+  padding: 30px;
 }
 #search-bar {
   display: block;
   margin-top: 0 auto;
   text-align: center;
-  border-radius: 50px;
 }
 #search-button {
-  border-radius: 30px;
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(126, 126, 126);
   transition: all 150ms ease-out;
+  opacity: 0.8;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 #search-button:hover {
@@ -29,30 +27,27 @@ body {
   background: rgb(24, 69, 153);
   color: rgb(158, 187, 240);
 }
-#emoji {
-  margin-top: 15px;
-  margin-left: 10px;
-}
-#emoji:hover {
-  cursor: pointer;
-}
+
 h1 {
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
   margin-bottom: 0px;
   text-align: left;
+  opacity: 0.8;
 }
 
 ul {
   margin-left: 0;
   padding: 0;
+  opacity: 0.6;
+  text-align: left;
 }
 li {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 100;
   line-height: 19px;
 }
@@ -63,30 +58,26 @@ li::first-letter {
   margin-bottom: 20px;
 }
 .weatherTemperature img {
-  margin-right: 5px;
+  display: inline-block;
   height: 64px;
   width: 64px;
-  display: inline-block;
-  height: 60px;
   margin-top: unset;
   vertical-align: top;
-  width: 60px;
 }
 .weatherTemperature {
-  display: inline-block;
-  padding-left: 10px;
   vertical-align: top;
 }
 
 #temperature {
-  font-size: 60px;
+  font-size: 48px;
   line-height: 1;
   font-weight: 400;
 }
 .unit {
   position: relative;
   font-size: 16px;
-  top: -34px;
+  top: -30px;
+  left: -3px;
 }
 
 a {
@@ -110,9 +101,7 @@ a {
 }
 
 footer {
-  font-size: 13px;
+  font-size: 11px;
   text-align: center;
-  margin-top: 0;
-
-  margin-bottom: 0;
+  opacity: 0.8;
 }
