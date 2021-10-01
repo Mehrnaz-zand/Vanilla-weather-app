@@ -24,9 +24,9 @@ function getDate(timestamp){
 }
 
 function showTemperature(response){
+celsiusTemperature = response.data.main.temp;
 document.querySelector("#city").innerHTML =response.data.name;
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
-celsiusTemperature = response.data.main.temp;
 document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
@@ -42,28 +42,36 @@ axios.get(apiUrl).then(showTemperature);
 }
 
 function handleSubmit(event){
-    event.preventDefault();
-    let cityInput = document.querySelector("#city-input");
-    search(cityInput.value);
+event.preventDefault();
+let cityInput = document.querySelector("#city-input");
+search(cityInput.value);
 }
 
-function displayCelsiusTemperature(event){
- event.preventDefault();
+function displayCelsiusTemperature(event){ 
+event.preventDefault();
 let temperature = document.querySelector("#temperature");
 temperature.innerHTML = Math.round(celsiusTemperature); 
+celsiusLink.classList.add("active");
+fahrenheitLink.classList.remove("active");
 }
 
 function displayFahrenheitTemperature(event){
  event.preventDefault();
  let temperature = document.querySelector("#temperature");
- let Fahrenheit = (celsiusTemperature *9) /5 + 32;
- temperature.innerHTML =Math.round(Fahrenheit);
+ let FahrenheitTemperature = (celsiusTemperature *9) /5 + 32;
+ temperature.innerHTML =Math.round(FahrenheitTemperature);
+ celsiusLink.classList.remove("active");
+ fahrenheitLink.classList.add("active");
 }
 
 let celsiusTemperature =null ;
 document.querySelector("#search-bar").addEventListener("submit", handleSubmit);
-document.querySelector("#fahrenheit").addEventListener("click", displayFahrenheitTemperature);
-document.querySelector("#celsius").addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink= document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 search("tehran");

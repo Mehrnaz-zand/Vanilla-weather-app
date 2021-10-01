@@ -88,9 +88,15 @@ li::first-letter {
   font-size: 16px;
   top: -34px;
 }
-.units:hover {
-  cursor: pointer;
+.active {
   text-decoration: none;
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+  color: black;
+  cursor: default;
 }
 a {
   text-decoration: none;
