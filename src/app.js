@@ -38,9 +38,7 @@ function getForecastDays(timestamp){
 function dispalyForecast(response) {
 let forecast= document.querySelector(".weatherForecast");
 let forecastDaily = response.data.daily;
-console.log(response.data.daily);
-
-forecastHTML = `<div class="row">`;
+let forecastHTML = `<div class="row">`;
 forecastDaily.forEach(function(forecast, index){
     if(index < 6){
     forecastHTML = forecastHTML + `               
